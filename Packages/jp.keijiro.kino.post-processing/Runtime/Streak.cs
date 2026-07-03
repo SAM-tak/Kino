@@ -76,7 +76,7 @@ namespace Kino.PostProcessing
         {
             _material = CoreUtils.CreateEngineMaterial("Hidden/Kino/PostProcess/Streak");
             _prop = new MaterialPropertyBlock();
-            _pyramids = new Dictionary<int, StreakPyramid>();
+            _pyramids = new Dictionary<EntityId, StreakPyramid>();
         }
 
         public override void Render(CommandBuffer cmd, HDCamera camera, RTHandle srcRT, RTHandle destRT)
