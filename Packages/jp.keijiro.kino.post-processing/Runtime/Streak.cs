@@ -38,12 +38,12 @@ namespace Kino.PostProcessing
         // Image pyramid storage
         // We have to use different pyramids for each camera, so we use a
         // dictionary and camera GUIDs as a key to store each pyramid.
-        Dictionary<int, StreakPyramid> _pyramids;
+        Dictionary<EntityId, StreakPyramid> _pyramids;
 
         StreakPyramid GetPyramid(HDCamera camera)
         {
             StreakPyramid candid;
-            var cameraID = camera.camera.GetInstanceID();
+            var cameraID = camera.camera.GetEntityId();
 
             if (_pyramids.TryGetValue(cameraID, out candid))
             {
